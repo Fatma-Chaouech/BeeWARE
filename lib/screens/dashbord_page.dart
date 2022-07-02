@@ -32,7 +32,7 @@ class _MyDashboard extends State<Dashboard> {
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [ beeBrown,beeYellow])),
+                  colors: [ beeUp,beeUp])),
           child: Column(
             children: [
               Stack(
@@ -53,7 +53,6 @@ class _MyDashboard extends State<Dashboard> {
                         //height: 900,
                         child: Image.asset(
                           "assets/cells.png",
-                          width: size.height * 0.18,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -136,9 +135,9 @@ class _MyDashboard extends State<Dashboard> {
                           ),
                          Container(
                            width: 50,
-                           margin: EdgeInsets.fromLTRB(130, 0, 0, 0),
+                           margin: EdgeInsets.fromLTRB(80, 0, 0, 0),
                            child:  FloatingActionButton(onPressed: (){},
-                             foregroundColor: beeBrown,
+                             backgroundColor: darkOrange,
                              child: Text("Reset"),
 
                            ),

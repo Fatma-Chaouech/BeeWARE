@@ -29,6 +29,9 @@ const specialBlue = Color(0xff32D1E4);
 const specialPurple = Color(0xff73BCFF);
 const purple = Color(0xff6FBDFD);
 
-const beeBrown = Color(0xfffff0db);
+
+const beeUp = Color(0xfffff0db);
+const beeDown = Color(0xffcde0dc);
+const beeBrown = Color(0xff71614e);
 const beeYellow = Color(0xffcde0dc);
 const beeWhite = Color(0xffa6dafa);
