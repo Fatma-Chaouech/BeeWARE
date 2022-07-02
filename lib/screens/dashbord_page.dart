@@ -79,10 +79,10 @@ class _MyDashboard extends State<Dashboard> {
                 ),
                 Column(
                   children: [
-                    SizedBox(height: 35),
+                    SizedBox(height: 70),
                     Container(
                       width: 400,
-                      //height: 900,
+                      height: 650,
                       child: Image.asset(
                         "assets/cells.png",
                         fit: BoxFit.cover,
@@ -96,7 +96,7 @@ class _MyDashboard extends State<Dashboard> {
                     Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.fromLTRB(95, 304, 5, 0),
+                          margin: EdgeInsets.fromLTRB(100, 320, 5, 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -106,15 +106,15 @@ class _MyDashboard extends State<Dashboard> {
                                   color: beeBrown,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w800,
-                                  fontSize: 50,
+                                  fontSize: 45,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        const SizedBox(height: 25),
+                        const SizedBox(height: 28),
                         Container(
-                          margin: EdgeInsets.fromLTRB(5, 0, 73, 0),
+                          margin: EdgeInsets.fromLTRB(5, 0, 65, 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -124,15 +124,15 @@ class _MyDashboard extends State<Dashboard> {
                                   color: beeBrown,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w800,
-                                  fontSize: 50,
+                                  fontSize: 45,
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 30),
                         Container(
-                          margin: EdgeInsets.fromLTRB(73, 0, 5, 0),
+                          margin: EdgeInsets.fromLTRB(100, 0, 5, 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -142,7 +142,7 @@ class _MyDashboard extends State<Dashboard> {
                                   color: beeBrown,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w800,
-                                  fontSize: 50,
+                                  fontSize: 45,
                                 ),
                               ),
                             ],
@@ -160,7 +160,7 @@ class _MyDashboard extends State<Dashboard> {
                                   color: beeBrown,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w800,
-                                  fontSize: 50,
+                                  fontSize: 45,
                                 ),
                               ),
                             ],
