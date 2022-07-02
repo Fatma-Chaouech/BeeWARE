@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "600371674389",
+    "firebase_url": "https://habee-35716-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "habee-35716",
+    "storage_bucket": "habee-35716.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600371674389:android:f65772b27ea83fbd6bfd1c",
+        "android_client_info": {
+          "package_name": "Habee.jk12"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600371674389-enqetrhr45g77l9r8b0apku4jnd1j5c0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-iZ320nHOyIm7FKdjxh0G3H8WxCZnX4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600371674389-enqetrhr45g77l9r8b0apku4jnd1j5c0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "600371674389-82ddo62jibhutne1sdo8mhajjaguj1hu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bee"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600371674389:android:9ecad811c092c8936bfd1c",
+        "android_client_info": {
+          "package_name": "com.example.bee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600371674389-enqetrhr45g77l9r8b0apku4jnd1j5c0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-iZ320nHOyIm7FKdjxh0G3H8WxCZnX4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600371674389-enqetrhr45g77l9r8b0apku4jnd1j5c0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "600371674389-82ddo62jibhutne1sdo8mhajjaguj1hu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.bee"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
