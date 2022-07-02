@@ -79,7 +79,7 @@ class _MyDashboard extends State<Dashboard> {
                 ),
                 Column(
                   children: [
-                    SizedBox(height: 70),
+                    SizedBox(height: 40),
                     Container(
                       width: 400,
                       height: 650,
@@ -96,7 +96,7 @@ class _MyDashboard extends State<Dashboard> {
                     Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.fromLTRB(100, 320, 5, 0),
+                          margin: EdgeInsets.fromLTRB(100, 290, 5, 0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
