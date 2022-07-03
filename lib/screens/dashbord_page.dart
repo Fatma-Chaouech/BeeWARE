@@ -17,9 +17,13 @@ class _MyDashboard extends State<Dashboard> {
   double? temperature;
   int? humidity;
   String? sound;
+  double? weight;
+  double? maxWeight;
   StreamSubscription? _tempStream;
   StreamSubscription? _humStream;
   StreamSubscription? _soundStream;
+  StreamSubscription? _weightStream;
+  StreamSubscription? _maxWeightStream;
 
   @override
   void initState() {
@@ -32,28 +36,96 @@ class _MyDashboard extends State<Dashboard> {
     var humValue;
     var soundValue;
     var weightValue;
+    var maxWeightValue;
     DatabaseReference tempRef = FirebaseDatabase.instance.ref("temperature");
     DatabaseReference humRef = FirebaseDatabase.instance.ref("humidity");
     DatabaseReference soundRef = FirebaseDatabase.instance.ref("sound");
+    DatabaseReference weightRef =
+        FirebaseDatabase.instance.ref("weight/currentWeight");
+    DatabaseReference maxWeightRef =
+        FirebaseDatabase.instance.ref("weight/maxWeight");
     _tempStream = tempRef.onValue.listen((event) {
       tempValue = event.snapshot.value;
-      print(event.snapshot.value);
+      if (tempValue != null && (tempValue! > 35.5 || tempValue! < 34.5)) {
+        abTempSnackBar();
+      }
       setState(() {
         temperature = tempValue;
       });
     });
     _humStream = humRef.onValue.listen((event) {
       humValue = event.snapshot.value;
+      if (humValue != null && (humValue! > 60 || humValue! < 50)) {
+        abHumiditySnackBar();
+      }
       setState(() {
         humidity = humValue;
       });
     });
     _soundStream = soundRef.onValue.listen((event) {
       soundValue = event.snapshot.value;
+      if (soundValue != null &&
+          (int.parse(soundValue) > 500 || int.parse(soundValue) < 300)) {
+        abTempSnackBar();
+      }
       setState(() {
         sound = soundValue;
       });
     });
+    _weightStream = weightRef.onValue.listen((event) {
+      weightValue = event.snapshot.value;
+      print(weightValue);
+      var weightDiff = 100 - weightValue * 100 / maxWeight;
+      if (weightDiff > 15) {
+        abWeightSnackBar(weightDiff);
+      }
+
+      setState(() {
+        weight = weightValue;
+      });
+    });
+    _maxWeightStream = maxWeightRef.onValue.listen((event) {
+      maxWeightValue = event.snapshot.value;
+      var weightDiff = 100 - weight! * 100 / maxWeightValue!;
+      if (weightDiff > 15) {
+        abWeightSnackBar(weightDiff);
+      }
+      setState(() {
+        maxWeight = maxWeightValue;
+      });
+    });
+  }
+
+  void abTempSnackBar() {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('we detected an abnormal temperature!'),
+      backgroundColor: Colors.yellow[900],
+      duration: const Duration(seconds: 10),
+    ));
+  }
+
+  void abHumiditySnackBar() {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('we detected an abnormal humidity!'),
+      backgroundColor: Colors.yellow[900],
+      duration: const Duration(seconds: 10),
+    ));
+  }
+
+  void abSoundSnackBar() {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('we detected an abnormal sound activity !'),
+      backgroundColor: Colors.red[500],
+      duration: const Duration(seconds: 10),
+    ));
+  }
+
+  void abWeightSnackBar(var value) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text('we detected an abnormal weight loss : $weight% !'),
+      backgroundColor: Colors.red[600],
+      duration: const Duration(seconds: 10),
+    ));
   }
 
   @override
@@ -157,9 +229,9 @@ class _MyDashboard extends State<Dashboard> {
                                 margin: EdgeInsets.fromLTRB(5, 0, 75, 0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  children: const [
+                                  children: [
                                     Text(
-                                      "400",
+                                      "$weight",
                                       style: TextStyle(
                                         color: beeBrown,
                                         fontFamily: 'Gilroy',
