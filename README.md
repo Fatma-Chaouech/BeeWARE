@@ -1,6 +1,6 @@
 # bee
 
-Monitor your bee hive using our application.
+Monitor your beehive using our application.
 
 ## Getting Started
 
