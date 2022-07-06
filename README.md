@@ -1,6 +1,6 @@
 # BeeWARE
 
-Monitor your beehive using our application.
+Remotely detect honey bee's health and productivity
 
 ## User Interface
 ![image](https://user-images.githubusercontent.com/69005550/177500087-2ec47152-c071-4070-9134-43ead610d440.png)
